@@ -1,0 +1,116 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #f4f4f4;
+}
+
+.navbar__main-list .navbar__secondary-list {
+  list-style: none;
+}
+
+.navbar__main-item,
+.navbar__secondary-item {
+  color: #333;
+  display: inline-block;
+  padding: 1rem;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.navbar__main-link,
+.navbar__secondary-link {
+  color: #333;
+  text-decoration: none;
+}
+
+/* Hide nested ul by default */
+.navbar__secondary-list {
+  display: none;
+}
+
+.navbar__main-item:hover {
+  cursor: pointer;
+  background-color: lightpink;
+  color: rgb(33, 94, 133);
+}
+
+.navbar__main-item:hover .navbar__main-link {
+  color: inherit;
+}
+
+/* Nested ul show */
+.navbar__main-item:hover .navbar__secondary-list {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 12.5rem;
+  margin-top: 1rem;
+}
+
+.navbar__main-item:hover .navbar__secondary-item {
+  display: block;
+  background: #e7e7e7;
+}
+
+.navbar__main-item:hover .navbar__secondary-item:hover {
+  display: block;
+  background-color: lightpink;
+  color: rgb(33, 94, 133);
+}
+
+.navbar__main-item:hover .navbar__secondary-item:hover .navbar__secondary-link {
+  color: inherit;
+}
+
+.navbar__main-item:hover .navbar__secondary-item span {
+  float: right;
+  color: #fff;
+  background-color: rgb(33, 94, 133);
+  padding: 0.2rem 0.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  border-radius: 5px;
+}
+
+.navbar__main-item:hover .navbar__secondary-item:hover span {
+  background-color: rgb(64, 131, 173);
+}
+
+.showcase {
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: lightpink;
+}
+
+.showcase__title {
+  color: rgb(7, 43, 65);
+  font-size: 4.5rem;
+}
+
+/* Media Query */
+
+@media (max-width: 37.5em) {
+  .navbar__main-item {
+    display: block;
+  }
+
+  .navbar__main-item:hover .navbar__secondary-list {
+    position: relative;
+    width: 100%;
+  }
+}
